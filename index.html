@@ -6,33 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MED Card</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
     <header id="header">
         <nav class="nav">
-            <ul class="nav-links">
-                <li class="nav-links__link">Вход</li>
-                <li class="nav-links__link">Регистрация</li>
+            <ul class="nav-list">
+                <li class="nav-list__link">Вход</li>
+                <li class="nav-list__link">Регистрация</li>
             </ul>
         </nav>
     </header>
     <main id="main">
         <aside class="category">
             <div class="category-buttons">
-                <button class="category-button">Терапевт</button>
-                <button class="category-button">Оттолоринголог(Лор)</button>
-                <button class="category-button">Хирург</button>
+                <button class="category-button"><span>Терапевт</span></button>
+                <button class="category-button"><span>Оттолоринголог(Лор)</span></button>
+                <button class="category-button"><span>Хирург</span></button>
+                <button class="category-button" data-button="profile"><span>Личные данные</span></button>
             </div>
             <div class="category-new">
-                <button class="category-new__button">Добавить новую категорию</button>
+                <button class="category-new__button"><span>Добавить новую категорию +</span></button>
             </div>
         </aside>
+        <div class="page-content">
+            <section class="personal" data-page="profile">
+                <div class="personal-wrapper">
+                    <div class="personal-biography">
+                        <h2 class="personal-header">Персональная информация</h2>
+                        <div class="personal-photo"><img src="./assets/proflie.jpg" alt="#"></div>
+                        <div class="personal-name"><span>Name:</span> Владислав Дмитренко</div>
+                        <div class="personal-age"><span>Age:</span> 23</div>
+                        <div class="personal-male"><span>Male:</span> Male</div>
+                        <div class="personal-birthday"><span>Birthday:</span> 18.06.1998</div>
+                        <div class="personal-bad-checks"><span>Bad Cherks:</span> Нездоровая пища</div>
+                    </div>
+                    <div class="personal-history">
+                        <h2 class="personal-header">История болезней</h2>
+                        <button class="personal-history-new-case">Добавить новый случай</button>
+                        <div class="personal-history__cases">
+                            <div class="personal-history__case">
+                                <div class="personal-history__case-date"><span>Дата:</span> 21.04.21</div>
+                                <div class="personal-history__case-name"><span>Врач:</span> Лимаренко Виктория Василиевна</div>
+                                <div class="personal-history__case-problem"><span>Жалобы:</span>  Боль в горле, температура, озноб, насморк</div>
+                                <div class="personal-history__case-conclution"><span>Диагноз:</span>  Острая распираторная вирусная инфекция</div>
+                                <div class="personal-history__case-threatment"><span>Лечение:</span>  Полоскание горла, антибиотики</div>
+                                <div class="personal-history__case-additional"><span>Дополнительно:</span> Анализы на кровь и белок</div>
+                                <div class="personal-history__case-buttons">
+                                    <button class="personal-history__case-remove">Удалить историю</button>
+                                    <button class="personal-history__case-edit">Изменить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="therapist">
+                <h2 class="therapist-header">Терапевт и история болезней</h2>
+                <div class="therapist-button">
+                    <button class="therapist-add">Добавить в историю</button>
+                </div>
+                <div class="therapist-wrapper">
+                    <div class="therapist-stories">
+                        <div class="therapist-story">
+                            <div class="therapist-story__date">21.04.21</div>
+                            <div class="therapist-story__name">Лимаренко Виктория Василиевна</div>
+                            <div class="therapist-story__problem">Боль в горле, температура, озноб, насморк</div>
+                            <div class="therapist-story__conclution">Острая распираторная вирусная инфекция</div>
+                            <div class="therapist-story__threatment">Полоскание горла, антибиотики</div>
+                            <div class="therapist-story__additional">Анализы на кровь и белок</div>
+                        </div>
+                        <div class="therapist-story">
+                            <div class="therapist-story__date">14.02.21</div>
+                            <div class="therapist-story__name">Лимаренко Виктория Василиевна</div>
+                            <div class="therapist-story__problem">Боль в горле, температура, озноб, насморк</div>
+                            <div class="therapist-story__conclution">Острая распираторная вирусная инфекция</div>
+                            <div class="therapist-story__threatment">Полоскание горла, антибиотики</div>
+                            <div class="therapist-story__additional">Анализы на кровь и белок</div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+        </div>
     </main>     
     <footer id="footer">
 
     </footer>
-    <script src="./js/main.js"></script>
+    <div class="new-case-modal-wrapper">
+        <div class="new-case-modal">
+            <form id="newCaseForm">
+                <input type="text" placeholder='Дата' name='date'>
+                <input type="text" placeholder='Имя Врача' name='doctor'>
+                <textarea type="text" placeholder='Жалобы' name='complaints'></textarea>
+                <textarea type="text" placeholder='Лечение' name='treatment'></textarea>
+                <textarea type="text" placeholder='Заключение' name='conclusion'></textarea>
+                <input type="text" placeholder='Дополнительно' name='additional'>
+                <button type="submit">Добавить</button>
+                <button>Закрыть</button>
+            </form>
+        </div>
+    </div>
+    <script src="./js/main.js" type="module"></script>
 </body>
 </html>

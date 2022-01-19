@@ -1,0 +1,235 @@
+body {
+  max-width: 1920px;
+  width: 100%;
+  height: 100vmin;
+  margin: 0 auto;
+}
+nav {
+  border-bottom: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  padding-top: 20px;
+  background-color: #0b93a9;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+  width: 100%;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 0;
+}
+.nav-list li {
+  list-style-type: none;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+#main {
+  display: flex;
+  align-items: start;
+  height: 92vmin;
+  background-color: #0b93a9;
+}
+
+.category {
+  width: 25%;
+  height: 100%;
+  background: #0b93a9;
+  border-right: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.category-buttons {
+  display: flex;
+  flex-direction: column;
+}
+.category-button,
+.category-new__button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.category-button span,
+.category-new__button span {
+  position: relative;
+  z-index: 10;
+}
+.category-new__button {
+  width: 100%;
+  margin-top: auto;
+  border-bottom: none;
+  border-top: 1px solid #fff;
+  position: sticky;
+}
+
+.category-button:before,
+.category-new__button:before {
+  content: "";
+  position: absolute;
+  transform: translateX(-100%);
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+@keyframes filling {
+    0% {
+        transform: translateX(-100%);
+        background-color: #fff;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.category-button:hover span,
+.category-new__button:hover span {
+  color: #0b93a9;
+}
+.category-button:hover:before,
+.category-new__button:hover:before {
+    animation: filling 1s forwards;
+}
+
+.page-content {
+  width: 75%;
+  padding: 2rem 0 0 2rem;
+}
+
+.personal-header {
+  font-size: 32px;
+  line-height: 38px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+
+.personal-wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding-right: 50px;
+}
+.personal-biography {
+  width: 50%;
+  margin-right: 50px;
+  color: #fff;
+}
+.personal-history {
+  width: 50%;
+  color: #fff;
+}
+.personal-photo {
+  height: 200px;
+  max-width: 200px;
+}
+.personal-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.personal-history-new-case {
+  background-color: tomato;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.personal-history__cases {
+  max-height: 600px;
+}
+
+.personal-history__case span {
+  font-weight: 700;
+}
+
+.personal-history__case + .personal-history__case {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #fff;
+}
+
+.new-case-modal-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+.new-case-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 7px;
+}
+.new-case-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-case-modal form input,
+textarea {
+  width: 400px;
+  border: 1px solid aqua;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.new-case-modal form input {
+  height: 40px;
+}
+
+.new-case-modal form textarea {
+  height: 80px;
+  resize: none;
+}
+.new-case-modal button {
+  height: 40px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #000;
+  width: 100%;
+}
+.new-case-modal button + button {
+  margin-top: 20px;
+}
+
+.personal-history__case-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.personal-history__case-remove,
+.personal-history__case-edit {
+  font-size: 14px;
+  line-height: 21px;
+  color: #000;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: underline;
+}
